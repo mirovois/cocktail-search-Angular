@@ -1,0 +1,23 @@
+<header class="">
+  <div class="col-10 offset-1 row align-items-center">
+    <h3 class="col-8">{{title | uppercase}}</h3>
+    <nav class="col-4">
+      <ul class="nav justify-content-end">
+        <li>Home</li>
+        <li *ngIf="!user">Login</li>
+        <li *ngIf="user" (click)="logout()">Logout: {{user.username}}</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<app-login></app-login>
+<div class="container p5-6">
+  <div class="row row cols-2 justify-content-center">
+    <app-cocktail [cocktail]="cocktail" (clickCocktail)="logName($event)" *ngFor="let cocktail of cocktails"></app-cocktail>
+  </div>
+
+
+</div>
+
+<router-outlet></router-outlet>
