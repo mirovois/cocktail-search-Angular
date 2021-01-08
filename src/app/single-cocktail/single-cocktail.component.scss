@@ -1,0 +1,12 @@
+.card {
+  position: relative;
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+.card:hover .overlay {
+  opacity: 0.3;
+}

@@ -13,8 +13,4 @@ export class CocktailComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
   }
-  emitToParent(){
-    this.clickCocktail.emit(this.cocktail.strDrink);
-  }
-
 }

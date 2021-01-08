@@ -1,8 +1,6 @@
 import { User } from './user';
 import { LoginService } from './login.service';
-import { CocktailService } from './cocktail.service';
 import { Component, OnInit } from '@angular/core';
-import { Cocktail } from './Cocktail';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +9,11 @@ import { Cocktail } from './Cocktail';
 })
 export class AppComponent  implements OnInit{
   title = "Cocktail App";
-  cocktails:Cocktail[];
   user: User;
 
-  constructor(private cocktailService:CocktailService,
-    private loginService:LoginService) {}
+  constructor(private loginService:LoginService) {}
 
   ngOnInit(){
-    this.cocktails = this.cocktailService.getCocktails();
     this.loginService.getUser().subscribe((user) =>{
       this.user = user;
     });
