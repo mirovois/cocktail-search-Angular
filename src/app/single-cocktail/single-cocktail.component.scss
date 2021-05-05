@@ -1,12 +1,13 @@
 .card {
   position: relative;
+  height: 35rem;
   img {
     width: 100%;
-    height: 180px;
+    height: 20rem;
     object-fit: cover;
   }
 }
 
-.card:hover .overlay {
-  opacity: 0.3;
-}
+// .card:hover .overlay {
+//   opacity: 0.3;
+// }

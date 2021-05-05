@@ -1,0 +1,11 @@
+<!-- <div [routerLink]="['/cocktail', cocktail.id]" class="card m-4" style="width: 18rem; height: 22rem;"> -->
+  <div class="card m-4">
+    <img [src]="cocktail.strDrinkThumb" class="card-img-top img-fluid" alt="cocktail.strDrink">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{cocktail.strDrink}}</h5>
+      <!-- <p class="card-text">{{cocktail.strInstructions}}</p> -->
+      <button [routerLink]="['/cocktail', cocktail.idDrink]" class='btn btn-primary w-100'>See more</button>
+    </div>
+
+    <!-- <div class="overlay"></div> -->
+  </div>

@@ -1,9 +1,12 @@
-<div class="card m-4" style="width: 18rem; height: 22rem;">
-  <img [src]="cocktail.strDrinkThumb" class="card-img-top" [alt]="cocktail.strDrink">
-  <div class="card-body">
-    <h5 class="card-title">{{cocktail.strDrink}}</h5>
-    <p class="card-text">{{cocktail.strInstructions}}</p>
+<div class="row">
+  <div routerLinkActive="router-link-active"  class="card m-4 col-10 col-sm-8 col-md-6 col-lg-4 mx-auto" style="width: 18rem; height: 22rem;">
+    <img [src]="cocktail.strDrinkThumb" class="card-img-top" [alt]="cocktail.strDrink">
+    <div class="card-body">
+      <h5 class="card-title">{{cocktail.strDrink}}</h5>
+      <!-- <p class="card-text">{{cocktail.strInstructions}}</p> -->
+    </div>
+    <!-- <div class="overlay"></div> -->
+    <button [routerLink]="['/cocktail',cocktail.idDrink + 1]">Click me!</button>
   </div>
-  <div class="overlay"></div>
 </div>
 

@@ -1,9 +1,18 @@
-header {
-  background-color: burlywood;
-}
-ul {
-  li {
-    padding: 0.5rem;
-    cursor: pointer;
-  }
+// header {
+//   background-color: burlywood;
+// }
+// ul {
+//   li {
+//     padding: 0.5rem;
+//     cursor: pointer;
+//     &.active {
+//       color: white;
+//     }
+//   }
+// }
+.main {
+  background-image: url(../assets/bgr.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
 }

@@ -1,7 +1,7 @@
 export class Cocktail{
-  id?: Number
+  idDrink?: number;
   strDrink: String;
-  strGlass?: String;
-  strInstructions:String;
+  // strGlass?: String;
+  // strInstructions:String;
   strDrinkThumb:String
 }

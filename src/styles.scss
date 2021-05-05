@@ -1,5 +1,23 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: start;
+}
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+//   background-image: url(./assets/bgr.jpg);
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: left;
+// }

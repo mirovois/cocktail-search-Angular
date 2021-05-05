@@ -1,16 +1,9 @@
-<header class="col-12">
-  <div class="col-10 offset-1 row align-items-center">
-    <h3 [routerLink]="['home']" class="col-8">{{title | uppercase}}</h3>
-    <nav class="col-4">
-      <ul class="nav justify-content-end">
-        <li [routerLink]="['cocktail', 'add']">Add drink</li>
-        <li [routerLink]="['login']" *ngIf="!user">Login</li>
-        <li *ngIf="user" (click)="logout()">Logout: {{user.username}}</li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<div class="my-1">
+<app-header></app-header>
+<!-- <app-cocktail-list></app-cocktail-list> -->
+<!-- <div class="container py-4">
+</div> -->
+<div class="flex-grow-1 mt-4 pt-4 main">
+  <app-loader></app-loader>
   <router-outlet></router-outlet>
 </div>
 

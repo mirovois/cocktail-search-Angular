@@ -7,17 +7,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LoginService {
   user:BehaviorSubject<User> = new BehaviorSubject(undefined);
+  // user:User;
   constructor() { }
 
   login(username:string, password:string){
     if(username && password){
-      this.user.next(new User(username, password));
+      // this.user = new User(username, password);
+      this.user.next(new User(username, password))
     }
   }
   logout(){
     this.user.next(undefined);
   }
-  getUser(): Observable<User>{
+  getUser():Observable<User>{
     return this.user;
   }
 }

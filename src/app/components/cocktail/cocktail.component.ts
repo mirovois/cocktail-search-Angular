@@ -1,5 +1,5 @@
+import { Cocktail } from './../../Cocktail';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Cocktail } from '../Cocktail';
 
 @Component({
   selector: 'app-cocktail',
@@ -8,7 +8,7 @@ import { Cocktail } from '../Cocktail';
 })
 export class CocktailComponent implements OnInit {
   @Input() cocktail:Cocktail;
-  @Output() clickCocktail: EventEmitter<String> = new EventEmitter();
+  @Output() clickCocktail: EventEmitter<Cocktail> = new EventEmitter();
 
   constructor() { }
   ngOnInit(): void {

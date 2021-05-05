@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CocktailService {
+  constructor(private http: HttpClient) { }
+
   cocktails:Cocktail[];
   // cocktails:Cocktail[] = [
   //   {
@@ -38,20 +40,32 @@ export class CocktailService {
   //     strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/swqxuv1472719649.jpg"
   //   },
   // ];
-  constructor(private http:HttpClient) { }
+  // logCocktail(value:string){
+  //   console.log(value)
+  // }
 
-  getCocktails():Observable<Cocktail[]>{
-    // return this.cocktails;
-    return this.http.get<Cocktail[]>('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-  }
-  getCocktail(id:number):Cocktail{
-    return this.cocktails.find(item =>item.id === id);
-  }
-  // getCocktail(id:number):Observable<Cocktail>{
-  //   return this.http.get<Cocktail>('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id);
+  // getCocktails():Cocktail[]{
+  //   return this.cocktails
   // }
-  // addCocktail(cocktail:Cocktail){
-  //   cocktail.id = this.cocktails.length;
-  //   this.cocktails.push(cocktail);
+
+  getCocktailsAlc():Observable<Cocktail[]>{
+    return this.http.get<Cocktail[]>('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+  }
+  getCocktailsNonAlc():Observable<Cocktail[]>{
+    return this.http.get<Cocktail[]>('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+  }
+
+  getCocktailByName(name:string):Observable<Cocktail[]>{
+    return this.http.get<Cocktail[]>(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`);
+  }
+  // getCocktail(id:number):Cocktail{
+  //   return this.cocktails.find(item =>item.id === id);
   // }
+  getCocktail(id:number):Observable<Cocktail>{
+    return this.http.get<Cocktail>(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+  }
+  addCocktail(cocktail:Cocktail){
+    cocktail.idDrink = this.cocktails.length;
+    this.cocktails.push(cocktail);
+  }
 }

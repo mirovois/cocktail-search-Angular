@@ -1,0 +1,20 @@
+<div class="container py-1">
+  <mat-tab-group class='border' dynamicHeight>
+    <mat-tab label="Alcoholic">
+      <div class="row row cols-2 justify-content-center">
+        <app-cocktail [cocktail]="cocktail" *ngFor="let cocktail of cocktailsAlc | paginate:{itemsPerPage:6, currentPage:currentPage1, totalItems:totalAlc, id:'first'}"></app-cocktail>
+      </div>
+      <pagination-controls (pageChange)="currentPage1 = $event" id="first" class='d-flex justify-content-center'></pagination-controls>
+    </mat-tab>
+    <mat-tab label="Non Alcoholic">
+      <div class="row row cols-2 justify-content-center">
+        <app-cocktail [cocktail]="cocktail" *ngFor="let cocktail of cocktailsNonAlc | paginate:{itemsPerPage:6, currentPage:currentPage2, totalItems:totalNonAlc, id:'second'} "></app-cocktail>
+      </div>
+      <pagination-controls (pageChange)="currentPage2 = $event" id="second" class='d-flex justify-content-center'></pagination-controls>
+    </mat-tab>
+  </mat-tab-group>
+
+  <!-- <div class="d-flex justify-content-end text-right mt-2">
+
+</div> -->
+</div>
